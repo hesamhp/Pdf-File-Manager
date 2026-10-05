@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Icon Generator</title></head>
+<body style="background:#111;color:#fff;font-family:sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;gap:20px;">
+<h2>PWA Icon Generator</h2>
+<canvas id="c" width="180" height="180" style="border-radius:36px;box-shadow:0 4px 30px rgba(124,110,240,0.4);"></canvas>
+<p id="status">Generating...</p>
+<a id="dl" style="display:none;background:#7c6ef0;color:#fff;padding:12px 28px;border-radius:12px;text-decoration:none;font-weight:bold;">Download icon.png</a>
+<script>
+var s = 180, c = document.getElementById("c"), x = c.getContext("2d");
+var g = x.createLinearGradient(0,0,s,s);
+g.addColorStop(0,"#7c6ef0"); g.addColorStop(1,"#5b4dc7");
+x.fillStyle = g; x.fillRect(0,0,s,s);
+x.fillStyle = "rgba(255,255,255,0.93)";
+x.beginPath();
+x.moveTo(54,30); x.lineTo(96,30); x.lineTo(126,64);
+x.lineTo(126,142); x.quadraticCurveTo(126,150,118,150);
+x.lineTo(62,150); x.quadraticCurveTo(54,150,54,142);
+x.closePath(); x.fill();
+x.fillStyle = "rgba(91,77,199,0.3)";
+x.beginPath(); x.moveTo(96,30); x.lineTo(96,64); x.lineTo(126,64); x.closePath(); x.fill();
+x.fillStyle = "rgba(91,77,199,0.25)";
+x.fillRect(66,80,44,5); x.fillRect(66,94,36,5); x.fillRect(66,108,40,5);
+x.fillStyle = "rgba(91,77,199,0.6)";
+x.font = "bold 22px -apple-system,sans-serif";
+x.textAlign = "center";
+x.fillText("PDF",90,138);
+var url = c.toDataURL("image/png");
+var dl = document.getElementById("dl");
+dl.href = url; dl.download = "icon.png"; dl.style.display = "inline-block";
+document.getElementById("status").textContent = "Right-click the icon above and 'Save Image As... icon.png' or click:";
+</script>
+</body>
+</html>

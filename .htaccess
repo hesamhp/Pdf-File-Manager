@@ -1,0 +1,15 @@
+AddDefaultCharset UTF-8
+DirectoryIndex index.php
+
+<Files "metadata.json">
+    Deny from all
+</Files>
+<Files "persons.json">
+    Deny from all
+</Files>
+<Files "notifications.json">
+    Deny from all
+</Files>
+<Files "vapid.json">
+    Deny from all
+</Files>
